@@ -40,7 +40,7 @@ int main(int argc, char* argv[]) {
   bool zero {true};
   double sum {0.0};
 
-  for (string argue : arguments) {
+  for (std::string argue : arguments) {
     if (zero) {
       zero = false;
       continue;
@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
     sum += stod(argue);
   }
 
-  double average = sum / static_cast<double>(argument.size() - 1);
+  double average = sum / static_cast<double>(arguments.size() - 1);
 
   std::cout << "average = " << average << "\n";
 
