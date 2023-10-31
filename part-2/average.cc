@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
   // on its own line.
   
   if (arguments.size() <=1) {
-    cout << "error: you must supply at least one number \n";
+    std::cout << "error: you must supply at least one number \n";
     return 1;
   }
 
@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
 
   double average = sum / static_cast<double>(argument.size() - 1);
 
-  cout << "average = " << average << "\n";
+  std::cout << "average = " << average << "\n";
 
   return 0;
 }
