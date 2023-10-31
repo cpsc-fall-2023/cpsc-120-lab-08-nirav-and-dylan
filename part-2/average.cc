@@ -12,51 +12,45 @@ int main(int argc, char* argv[]) {
 
   // TODO: Validate that there is at least one command line argument.
   // If not, print an error message and return a non-zero value.
-  if (arguments.size() <= 2) {
-    std::cout << "Error: There must be at least one command line n/";
-    return 1;
-
-
-  }
+  
 
   // TODO: Write a for-each loop to sum (add up) all of the command line
   // arguments.
-  double sum {0.0};
-  int count {0};
-
+ 
   // Use a double or float type so that your program preserves fractional
   // values.
   // The loop needs to skip over the command name, which is the first element
   // of the arguments vector.
   // Each argument is a std::string. You will need to convert each string into
   // a number with the std::stod or std::stof function.
-  for (int i = 1; i < arguments.size(); ++i) {
-    try {
-      double argumentValue = std::stod(arguments[i]);
-      sum += argumentValue;
-      count++;
-    } catch (const std::invalid_argument& e) {
-      std::cout << "Error: Invalid argument at position " << i << ". Skipping it." << "n/";
-    }
-  {
-
-     if (count == 0) {
-    std::cout << "Error: No valid numeric arguments provided." << "n/";
-    return 1;
-  }
-
-  double average = sum / count;
-  std::cout << "average = " << average << "n/";
-
-  return 0;
-}
+  
   // TODO: After the loop has finished summing the arguments, calculate the
   // average of the values. Recall that the average is the total value divided
   // by the number of values.
  
-
-
   // TODO: Use cout to print out a message of the form
   // average = *AVERAGE*
   // on its own line.
   
+  if (arguments.size() <=1) {
+    cout << "error: you must supply at least one number \n";
+    return 1;
+  }
+
+  bool zero {true};
+  double sum {0.0};
+
+  for (string argue : arguments) {
+    if (zero) {
+      zero = false;
+      continue;
+    }
+    sum += stod(argue);
+  }
+
+  double average = sum / static_cast<double>(argument.size() - 1);
+
+  cout << "average = " << average << "\n";
+
+  return 0;
+}
